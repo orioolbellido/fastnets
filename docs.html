@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastNets - Documentació</title>
+    <!-- Tipografías modernas -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=SF+Pro+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cool-culture">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/milfshakes">
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/login.js" defer></script>
+</head>
+<body>
+    <header class="top-banner">
+        <div class="banner-content">
+            <a href="index.html" class="logo-link"><img src="img/logo-icon.png" alt="Logo FastNets" class="logo-icon"></a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inici</a></li>
+                    <li><a href="about.html">Qui som</a></li>
+                    <li><a href="services.html">Què fem</a></li>
+                    <li><a href="docs.html">Documentació</a></li>
+                    <li><a href="clients.html">Clients</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Obrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1 style="font-size:2em; font-weight:700; text-align:center; margin-bottom:0.5em;">Documentació tècnica</h1>
+        <div id="login-area">
+            <p>Accés privat. Introdueix la paraula de pas:</p>
+            <input type="password" id="password" placeholder="Paraula de pas">
+            <button onclick="checkPassword()">Entrar</button>
+            <p id="error-msg" class="error"></p>
+        </div>
+        <div id="private-content" style="display:none;">
+            <h2>Elements tècnics</h2>
+            <ul>
+                <li><a href="#">Pòster informatiu senyalització riscos laborals</a></li>
+                <li><a href="#">Models de butlletins</a></li>
+                <li><a href="#">Normatives bàsiques instal·lacions telecomunicacions</a></li>
+                <li><a href="#">Llistat de proveïdors telecomunicacions</a></li>
+                <li><a href="#">Gestió dels residus</a></li>
+                <li><a href="#">Repositori blocs AutoCAD</a></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 FastNets
+    </footer>
+    <script src="js/menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            if (menuToggle && navList) {
+                navList.classList.remove('active');
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navList.classList.toggle('active');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
+                        navList.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

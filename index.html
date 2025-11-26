@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastNets - Plana Principal</title>
+    <!-- Tipografías modernes -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=SF+Pro+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cool-culture">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/milfshakes">
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-banner">
+        <div class="banner-content">
+            <a href="index.html" class="logo-link"><img src="img/logo-icon.png" alt="Logo FastNets" class="logo-icon"></a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inici</a></li>
+                    <li><a href="about.html">Qui som</a></li>
+                    <li><a href="services.html">Què fem</a></li>
+                    <li><a href="docs.html">Documentació</a></li>
+                    <li><a href="clients.html">Clients</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Obrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="main-hero" style="padding-top:3em;">
+            <div class="hero-content">
+                <h1 class="hero-title" style="font-size:3.2em; font-weight:800; margin-bottom:0.3em;">FastNets</h1>
+                <p class="mission" style="font-size:1.7em; font-weight:400; margin-bottom:2em; color:#eaeaea;">Connectant el futur, avui.</p>
+                <a href="services.html" class="hero-btn apple-btn">Descobreix els nostres serveis <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="carousel" style="margin-top:3em;">
+                <div class="carousel-track">
+                    <img src="img/carrusel1.jpg" alt="Xarxa moderna" class="carousel-img">
+                    <img src="img/carrusel2.jpg" alt="Equip FastNets" class="carousel-img">
+                    <img src="img/carrusel3.jpg" alt="Tecnologia avançada" class="carousel-img">
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn">&#10094;</button>
+                    <button class="carousel-btn" id="nextBtn">&#10095;</button>
+                </div>
+            </div>
+            <p style="font-size:1.15em; color:#ccc; max-width:600px; margin:3em auto 2em auto;">A FastNets, creiem que la tecnologia ha de ser invisible, potent i elegant. Dissenyem xarxes que transformen la manera en què les empreses i les persones viuen, treballen i es comuniquen. Amb una obsessió pel detall i la innovació, portem la connectivitat a un nou nivell.</p>
+        </section>
+        <section class="features" style="margin-top:4em;">
+            <h2 style="font-size:2.2em; font-weight:700; margin-bottom:1.5em; text-align:center;">El nostre compromís</h2>
+            <div style="display:flex; flex-wrap:wrap; gap:2em; justify-content:center;">
+                <div class="feature-card">
+                    <svg width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" stroke="#fff" stroke-width="2"/><path d="M24 14v20M14 24h20" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+                    <h3>Innovació</h3>
+                    <p>Sempre a l'avantguarda, desenvolupem solucions que anticipen les necessitats del mercat.</p>
+                </div>
+                <div class="feature-card">
+                    <svg width="48" height="48" fill="none" viewBox="0 0 48 48"><rect x="12" y="12" width="24" height="24" rx="8" stroke="#fff" stroke-width="2"/></svg>
+                    <h3>Senzillesa</h3>
+                    <p>La tecnologia ha de ser fàcil d'utilitzar. Simplifiquem la complexitat per als nostres clients.</p>
+                </div>
+                <div class="feature-card">
+                    <svg width="48" height="48" fill="none" viewBox="0 0 48 48"><path d="M24 8l8 32H16L24 8z" stroke="#fff" stroke-width="2"/></svg>
+                    <h3>Excel·lència</h3>
+                    <p>Cada instal·lació, cada servei, cada detall: busquem la perfecció en tot el que fem.</p>
+                </div>
+            </div>
+        </section>
+        <section style="max-width:700px; margin:5em auto 2em auto; text-align:center;">
+            <h2 style="font-size:1.7em; font-weight:700; margin-bottom:1em;">Per què FastNets?</h2>
+            <p style="color:#ccc; font-size:1.15em; margin-bottom:2em;">Som més que una empresa de telecomunicacions. Som el teu soci tecnològic, compromesos amb la seguretat, la sostenibilitat i la transformació digital. Amb FastNets, la teva empresa està preparada per al demà.</p>
+            <a href="about.html" class="apple-btn" style="margin-bottom:2em;">Coneix l'equip <i class="fas fa-users"></i></a>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 FastNets
+    </footer>
+    <script>
+    // Menú hamburguesa Apple-like
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        function closeMenu() {
+            navList.classList.remove('active');
+        }
+        if (menuToggle && navList) {
+            closeMenu();
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navList.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+        }
+    });
+    </script>
+    <script src="js/carrusel.js"></script>
+</body>
+</html>
