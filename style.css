@@ -595,6 +595,99 @@ button:hover {
     border: 1px solid #fff;
 }
 
+/* Secció de FAQ - Glassmorphism i Acordió */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.faq-item {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.faq-item:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: #fff;
+    border: none;
+    padding: 1.2em;
+    font-size: 1.15em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    transition: color 0.3s;
+}
+
+.faq-question:hover {
+    color: #eaeaea;
+    background: transparent;
+    border: none;
+}
+
+.faq-question i {
+    transition: transform 0.4s ease;
+}
+
+.faq-question.active {
+    color: #a1a1a1;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.faq-answer p {
+    padding: 0 1.2em 1.2em 1.2em;
+    margin: 0;
+    color: #ccc;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+/* Millores estètiques generals (micro-animacions i glow) */
+.feature-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.05), 0 8px 32px rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.feature-card svg circle,
+.feature-card svg rect,
+.feature-card svg path {
+    transition: stroke 0.3s;
+}
+
+.feature-card:hover svg circle,
+.feature-card:hover svg rect,
+.feature-card:hover svg path {
+    stroke: #aaa;
+}
+
 @keyframes fadein {
     from {
         opacity: 0;

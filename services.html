@@ -80,7 +80,13 @@
                         </ul>
                         <div class="project-docs">
                             <h4>Documentació del Projecte</h4>
-                            <ul>
+                            <div id="project1-auth" style="margin-top: 10px;">
+                                <button id="btn-unlock-p1"
+                                    style="padding: 8px 16px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                    <i class="fas fa-lock"></i> Desbloquejar Documentació
+                                </button>
+                            </div>
+                            <ul id="project1-docs-list" style="display: none; margin-top: 10px;">
                                 <li>
                                     <a href="#" class="doc-link" data-doc="docs/Projecte1_OfisSA/requeriments-ofis.pdf"
                                         data-type="pdf">
@@ -131,9 +137,9 @@
             <div class="project-card">
                 <div class="project-carousel carousel">
                     <div class="carousel-track">
-                        <img src="img/project2-1.jpg" alt="Projecte 2" class="carousel-img">
-                        <img src="img/project2-2.jpg" alt="Projecte 2" class="carousel-img">
-                        <img src="img/project2-3.jpg" alt="Projecte 2" class="carousel-img">
+                        <img src="img/Projecte2_BarJB/rack1_acabat.jpeg" alt="Bar JB - Imatge 1" class="carousel-img">
+                        <img src="img/Projecte2_BarJB/trhus_focos.jpeg" alt="Bar JB - Imatge 2" class="carousel-img">
+                        <img src="img/Projecte2_BarJB/control_so.jpeg" alt="Bar JB - Imatge 3" class="carousel-img">
                     </div>
                     <div class="carousel-controls">
                         <button class="carousel-btn" id="prevBtn2">&#10094;</button>
@@ -143,19 +149,39 @@
                 <div class="project-content-wrapper">
                     <div class="project-main-info">
                         <div class="project-header">
-                            <h3>Projecte 2</h3>
+                            <h3>Projecte 2: Bar JB</h3>
                             <span class="project-date">2025</span>
                         </div>
-                        <p class="project-description">Descripció pendent del projecte.</p>
+                        <p class="project-description" style="text-align: justify;">
+                            Reforma integral de les instal·lacions tecnològiques del "Bar JB" per a la seva conversió en
+                            un modern Bar Musical. El projecte inclou el disseny i implementació d'un sistema de
+                            sonorització d'alt rendiment amb un rack de control encastat, gestió d'il·luminació
+                            automatitzada i manual (DMX), sistemes de projecció avançats per a Karaoke amb "Prompter"
+                            sincronitzat per al cantant, i la instal·lació d'una emissora de ràdio FM pròpia de baixa
+                            potència.
+
+                            Una solució completa que ofereix diferents modes de funcionament (matí i nit) per adaptar-se
+                            a cada moment del dia, garantint una experiència audiovisual de màxima qualitat per als
+                            clients.
+                        </p>
                     </div>
                     <div class="project-details">
                         <ul class="project-features">
-                            <li><strong>Empresa:</strong> xxxxx</li>
+                            <li><strong>Client:</strong> Bar JB</li>
                         </ul>
                         <div class="project-docs">
                             <h4>Documents adjunts</h4>
-                            <ul>
-                                <li><a href="#">Document 2.pdf</a></li>
+                            <div id="project2-auth" style="margin-top: 10px;">
+                                <button id="btn-unlock-p2"
+                                    style="padding: 8px 16px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                    <i class="fas fa-lock"></i> Desbloquejar Documentació
+                                </button>
+                            </div>
+                            <ul id="project2-docs-list" style="display: none; margin-top: 10px;">
+                                <!-- Documentos pendientes de añadir -->
+                                <li>
+                                    <p>Pendent de documentació</p>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -187,7 +213,13 @@
                         </ul>
                         <div class="project-docs">
                             <h4>Documents adjunts</h4>
-                            <ul>
+                            <div id="project3-auth" style="margin-top: 10px;">
+                                <button id="btn-unlock-p3"
+                                    style="padding: 8px 16px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                    <i class="fas fa-lock"></i> Desbloquejar Documentació
+                                </button>
+                            </div>
+                            <ul id="project3-docs-list" style="display: none; margin-top: 10px;">
                                 <li><a href="#">Document 3.pdf</a></li>
                             </ul>
                         </div>
@@ -220,7 +252,13 @@
                         </ul>
                         <div class="project-docs">
                             <h4>Documents adjunts</h4>
-                            <ul>
+                            <div id="project4-auth" style="margin-top: 10px;">
+                                <button id="btn-unlock-p4"
+                                    style="padding: 8px 16px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                    <i class="fas fa-lock"></i> Desbloquejar Documentació
+                                </button>
+                            </div>
+                            <ul id="project4-docs-list" style="display: none; margin-top: 10px;">
                                 <li><a href="#">Document 4.pdf</a></li>
                             </ul>
                         </div>
@@ -253,7 +291,13 @@
                         </ul>
                         <div class="project-docs">
                             <h4>Documents adjunts</h4>
-                            <ul>
+                            <div id="project5-auth" style="margin-top: 10px;">
+                                <button id="btn-unlock-p5"
+                                    style="padding: 8px 16px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                    <i class="fas fa-lock"></i> Desbloquejar Documentació
+                                </button>
+                            </div>
+                            <ul id="project5-docs-list" style="display: none; margin-top: 10px;">
                                 <li><a href="#">Document 5.pdf</a></li>
                             </ul>
                         </div>
@@ -451,6 +495,25 @@
                     }
                 });
             }
+
+            // Lógica de protección por contraseña para todos los proyectos
+            document.querySelectorAll('[id^="btn-unlock-p"]').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const projectId = this.id.split('-p')[1]; // Extrae '1', '2', etc.
+                    const pass = prompt('Introdueix la contrasenya per veure els documents:');
+                    if (pass !== null) {
+                        // Comprobación de contraseña cifrada en base64
+                        if (btoa(pass) === 'T2Zpc1NBLTEyMzQ1') {
+                            const authDiv = document.getElementById('project' + projectId + '-auth');
+                            const docsList = document.getElementById('project' + projectId + '-docs-list');
+                            if (authDiv) authDiv.style.display = 'none';
+                            if (docsList) docsList.style.display = 'block';
+                        } else {
+                            alert('Contrasenya incorrecta. Accés denegat.');
+                        }
+                    }
+                });
+            });
 
             // Lógica del Modal
             const modal = document.getElementById("docModal");
