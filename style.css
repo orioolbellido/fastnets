@@ -52,12 +52,12 @@
 }
 
 .project-main-info {
-    flex: 3 1 400px;
+    flex: 3 1 auto;
     /* Takes more space */
 }
 
 .project-details {
-    flex: 1 1 250px;
+    flex: 1 1 auto;
     /* Takes less space but enough for docs */
     margin-bottom: 0;
     background: rgba(255, 255, 255, 0.03);
@@ -105,34 +105,42 @@
 }
 
 @media (max-width: 600px) {
-    .project-carousel .carousel-img {
-        height: 200px;
-    }
-
-    .project-content-wrapper {
-        padding: 1em;
+    .portfolio {
+        padding: 0 1em;
+        /* Add slight padding on the sides */
+        margin-top: 2em;
     }
 
     .project-card {
+        margin-bottom: 2em;
+        /* Reduce margin on mobile */
         border-radius: 16px;
     }
 
     .project-carousel {
         border-radius: 16px 16px 0 0;
     }
-}
-
-@media (max-width: 600px) {
-    .portfolio {
-        padding: 0 0.2em;
-    }
-
-    .project-card {
-        padding: 1em 0.3em;
-    }
 
     .project-carousel .carousel-img {
-        height: 120px;
+        height: 200px;
+    }
+
+    .project-content-wrapper {
+        padding: 1.2em;
+        gap: 1.5em;
+        /* Reduce gap on mobile */
+        flex-direction: column;
+    }
+
+    .project-header h3 {
+        font-size: 1.6em;
+        /* Slightly smaller for mobile */
+    }
+
+    .project-main-info,
+    .project-details {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -142,6 +150,12 @@ body {
     margin: 0;
     color: #fff;
     min-height: 100vh;
+    overflow-x: hidden;
+    /* Evita scrolls horitzontals no desitjats */
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .top-banner {
